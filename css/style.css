@@ -1,0 +1,90 @@
+
+.card {
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    width: 350px;
+}
+.card_title {
+    text-align: center;
+    font-size: 25px;
+}
+.card_container {
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.card_list {
+    background-color: #EFEFEF;
+    height: 50px;
+    display: flex;
+    gap: 15px;
+    list-style: none; /*con esto quitamos los puntos de lista;ver como se veia quitando esta linea*/
+    margin: 0;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid gray;
+    padding-left: 20px;
+}
+.card_list a {
+    text-decoration: none;
+    color: #3272DB;
+    padding: 7.5px 10px;
+    border-radius: 5px;
+}
+.card_list a:focus { /*hace la animacion cuando lo tenga señalado o este activo y abajo se agrego la propiedad con el fondo azul y letras blancas*/
+    background-color: #3272DB;
+    color: white;
+}
+.card_list_item {
+    color: inherit; /*inherit hace referncia a car_list a ; osea el color del padre */
+    transition: filter,transform 500ms ease;
+}
+.card_list_item:hover { /*....a*/
+    filter: brightness(1.25);
+    transform: scale(1.1);
+    transition: filter,transform 500ms 
+    ease;
+}
+.card_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.card_footer_title {
+    margin: 5px;
+    /* font-size: ; */
+}
+.card_text {
+    text-align: center;
+    width: 80%;
+    margin: 10px;
+}
+.card_button {
+    border: none;
+    background-color: #3272DB;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;/*cuando pasamos por el boton no se cambaba ala manito para esto es cursor*/
+    transition: filter,transform 500ms ease;
+}
+.card_button:hover { /*hacerle animacion*/
+    filter: brightness(1.25);/*con 1 no pasa nada y por debajo de 1 entonces vas a hacer al revez mas oscuro*/
+    transform: scale(1.1);/*cuando le pongo 1 no pasa  nada ;por encima crece por debajo 1 se achica*/
+    transition: filter,transform 500ms ease; /*es como diferentes velocidades de reproduccion al pirncipo rapido despues despacio y al final despues rapido*/
+}   /*el hover cuandop crece lo hace despacio cuando se achica lo hace tbm despaçio y esto mismo  y ahora los mismo que emos echo con el boton azul lo vamos a hacer con los items para eso copiamos desde filer hasta ease; y lo pegamos ....a*/
+.card_button::after { /*cuando toque insertar texto e imagenes elementos en el html sin tocar el html */
+    content: "";
+    background: url("/img/arrow_icon.png")no-repeat;/*es para evitar que se repita porque cuando tengamos un espacio mas grande pero si en este caso lo quitamos no pasa nada ,es solo para prevenir*/
+    background-size: 100%;
+    width: 15px;
+    aspect-ratio: 1;
+    display: block;
+    margin-left: 10px;
+}
